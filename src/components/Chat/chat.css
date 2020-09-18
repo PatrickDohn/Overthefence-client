@@ -37,13 +37,34 @@
 }
 
 .chatReciever {
-  margin-left: auto;
+  margin-right: auto;
   background-color: green;
 }
+
+.myMessage {
+  margin-left: auto;
+  background-color: red;
+}
+
+
 
 .chatTimestamp {
   margin-left: 10px;
   font-size: xx-small;
+}
+
+.hoverContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  bottom: -22px;
+  background-color: lightgray;
+  opacity: 0;
+
+}
+
+.hoverContainer:hover {
+  opacity: 0.7;
 }
 
 .chatName {

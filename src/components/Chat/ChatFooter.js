@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './chat.css'
 import axios from 'axios'
 import messages from '../AutoDismissAlert/messages'
@@ -6,7 +6,8 @@ import apiUrl from '../../apiConfig'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import MicIcon from '@material-ui/icons/Mic'
 
-function ChatFooter ({ user, msgAlert }) {
+function ChatFooter ({ user, msgAlert, setConversation }) {
+  const [newMessage, setNewMessage] = useState(false)
   const [sentChat, setSentChat] = useState('')
   console.log(sentChat)
   const [chat, setChat] = useState({})
@@ -36,9 +37,23 @@ function ChatFooter ({ user, msgAlert }) {
       data: { chat }
     })
       .then(res => setSentChat(res.data.chat.content))
-      .then(() => setChat(''))
-      // .then(res => setChatId(res.data.chat._id))
-      // .then(() => setChat(''))
+      .then(() => {
+        setChat('')
+        setNewMessage(true)
+        return axios({
+          url: apiUrl + '/chats/',
+          method: 'GET',
+          headers: {
+            'Authorization': `Token ${user.token}`
+          }
+        })
+      })
+      .then(res => {
+        console.log(res.data.chats, 'HERE')
+        setConversation(res.data.chats)
+      })
+      // .then(() => setChatId(null))
+      .catch(console.error)
       .then(() => msgAlert({
         heading: 'Message send success',
         message: messages.chatSuccess,
@@ -53,6 +68,17 @@ function ChatFooter ({ user, msgAlert }) {
         })
       })
   }
+  useEffect(() => {
+    axios({
+      url: apiUrl + '/chats/',
+      method: 'GET',
+      headers: {
+        'Authorization': `Token ${user.token}`
+      }
+    })
+      .then(res => setConversation(res.data.chats))
+  }, [newMessage, setNewMessage])
+
   return (
 
     <div className="chatFooter">

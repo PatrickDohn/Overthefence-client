@@ -8,6 +8,7 @@ import ChatFooter from '../Chat/ChatFooter.js'
 
 function Home ({ user, msgAlert }) {
   const [chatId, setChatId] = useState('')
+  const [conversation, setConversation] = useState([])
   console.log(chatId)
   useEffect(() => {
     axios({
@@ -24,7 +25,7 @@ function Home ({ user, msgAlert }) {
       .then(() => setChatId(null))
       .catch(console.error)
   }, [])
-  const [conversation, setConversation] = useState([])
+
   return (
     <div className="app">
 
@@ -35,12 +36,16 @@ function Home ({ user, msgAlert }) {
           msgAlert={msgAlert}
           user={user}
           conversation={conversation}
+          chatId={chatId}
+          setChatId={setChatId}
+          setConversation={setConversation}
         />
 
         <ChatFooter
           conversation={conversation}
           user={user}
           msgAlert={msgAlert}
+          setConversation={setConversation}
         />
       </div>
     </div>
