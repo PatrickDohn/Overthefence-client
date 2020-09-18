@@ -8,8 +8,7 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-import Sidebar from '../Sidebar/Sidebar.js'
-import Chat from '../Chat/Chat.js'
+import Home from '../Home/Home.js'
 import './app.css'
 
 const App = () => {
@@ -17,7 +16,7 @@ const App = () => {
   const [msgAlerts, setMsgAlerts] = useState([])
   // const [postId, setPostId] = useState(null)
 
-  const clearUser = () => this.setState({ user: null })
+  const clearUser = () => setUser(null)
 
   const msgAlert = ({ heading, message, variant }) => {
     setMsgAlerts([...msgAlerts, { heading, message, variant }])
@@ -47,14 +46,8 @@ const App = () => {
         <AuthenticatedRoute user={user} path='/change-password' render={() => (
           <ChangePassword msgAlert={msgAlert} user={user} />
         )} />
-        <AuthenticatedRoute user={user} path='/' render={() => (
-          <div className="app">
-
-            <div className="appBody">
-              <Sidebar />
-              <Chat />
-            </div>
-          </div>
+        <AuthenticatedRoute user={user} path='/home' render={() => (
+          <Home msgAlert={msgAlert} user={user} />
         )} />
       </main>
     </Fragment>
