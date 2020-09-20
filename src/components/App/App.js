@@ -8,7 +8,6 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-import Home from '../Home/Home.js'
 import './app.css'
 
 const App = () => {
@@ -44,9 +43,6 @@ const App = () => {
         )} />
         <AuthenticatedRoute user={user} path='/change-password' render={() => (
           <ChangePassword msgAlert={msgAlert} user={user} />
-        )} />
-        <AuthenticatedRoute user={user} path='/home' render={() => (
-          <Home msgAlert={msgAlert} user={user} />
         )} />
       </main>
     </Fragment>

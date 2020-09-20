@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button'
 import { Route } from 'react-router-dom'
 import Home from '../Home/Home'
 import './header.css'
 
 const unauthenticatedOptions = (
-  <Fragment>
+  <div className="frontpage">
     <div className='authButton'>
-      <Button variant='secondary' block href="#sign-up">Sign Up</Button>
-      <Button variant='secondary' block href="#sign-in">Sign In</Button>
+      <Button variant='primary' block href="#sign-up">Sign Up</Button>
+      <Button variant='primary' block href="#sign-in">Sign In</Button>
     </div>
-  </Fragment>
+  </div>
 )
 
 const Header = ({ user, msgAlert }) => (

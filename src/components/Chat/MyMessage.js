@@ -1,10 +1,9 @@
 import React from 'react'
 import './chat.css'
-
 import DeleteMsg from '../DeleteMsg/DeleteMsg'
 import UpdateMsg from '../UpdateMsg/UpdateMsg'
 
-const MyMessageJsx = ({ user, message, chatId, setChatId, setConversation }) => {
+const MyMessageJsx = ({ user, message, chatId, setChatId, setConversation, setSentChat, setChat, setNewMessage }) => {
   return (
     <div className="chatBody" key={message.id}>
       <p className= 'myMessage chatMessage'>
@@ -16,6 +15,9 @@ const MyMessageJsx = ({ user, message, chatId, setChatId, setConversation }) => 
             user={user}
             chatId={message.id}
             setConversation={setConversation}
+            setSentChat={setSentChat}
+            setChat={setChat}
+            setNewMessage={setNewMessage}
           />
           <UpdateMsg />
         </div>

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import EditIcon from '@material-ui/icons/Edit'
 import { IconButton } from '@material-ui/core'
+import './update.css'
 
 function UpdateMsg () {
   const [smShow, setSmShow] = useState(false)
@@ -17,14 +18,15 @@ function UpdateMsg () {
         onHide={() => setSmShow(false)}
         aria-labelledby="example-modal-sizes-title-sm"
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
+        <Modal.Header className='modHead' closeButton>
+          <Modal.Title className='editTitle' id="example-modal-sizes-title-sm">
             Edit Message
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <form id="send-chat-form">
+        <Modal.Body className='modBody'>
+          <form className='editForm' id="send-chat-form">
             <input
+              className='editInput'
               // value={chat.content || ''}
               // onChange={handleChange}
               name="content"

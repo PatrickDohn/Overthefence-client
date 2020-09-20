@@ -6,7 +6,7 @@ import Chat from '../Chat/Chat.js'
 import ChatHeader from '../Chat/ChatHeader.js'
 import ChatFooter from '../Chat/ChatFooter.js'
 
-function Home ({ user, msgAlert }) {
+function Home ({ user, msgAlert, message }) {
   const [chatId, setChatId] = useState('')
   const [conversation, setConversation] = useState([])
   console.log(chatId)
@@ -30,7 +30,9 @@ function Home ({ user, msgAlert }) {
     <div className="app">
 
       <div className="appBody">
-        <ChatHeader />
+        <ChatHeader
+          user={user}
+        />
 
         <Chat
           msgAlert={msgAlert}

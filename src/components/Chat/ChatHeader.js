@@ -20,8 +20,8 @@ function ChatHeader ({ user, msgAlert }) {
           <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
 
           <div className="chatHeaderInfo">
-            <h3>Room Name</h3>
-            <p>Last seen at...</p>
+            <h3>Over the fence</h3>
+            <p>{user.email}</p>
           </div>
 
           <div className="chatHeaderRight">

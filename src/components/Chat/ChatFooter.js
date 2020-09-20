@@ -3,8 +3,6 @@ import './chat.css'
 import axios from 'axios'
 import messages from '../AutoDismissAlert/messages'
 import apiUrl from '../../apiConfig'
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
-import MicIcon from '@material-ui/icons/Mic'
 
 function ChatFooter ({ user, msgAlert, setConversation }) {
   const [newMessage, setNewMessage] = useState(false)
@@ -52,7 +50,6 @@ function ChatFooter ({ user, msgAlert, setConversation }) {
         console.log(res.data.chats, 'HERE')
         setConversation(res.data.chats)
       })
-      // .then(() => setChatId(null))
       .catch(console.error)
       .then(() => msgAlert({
         heading: 'Message send success',
@@ -81,7 +78,6 @@ function ChatFooter ({ user, msgAlert, setConversation }) {
   return (
 
     <div className="chatFooter">
-      <InsertEmoticonIcon />
       <form id="send-chat-form" onSubmit={handleSubmit}>
         <input
           value={chat.content || ''}
@@ -92,7 +88,6 @@ function ChatFooter ({ user, msgAlert, setConversation }) {
         />
         <button type="submit">Send a message</button>
       </form>
-      <MicIcon />
     </div>
 
   )
