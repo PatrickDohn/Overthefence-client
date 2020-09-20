@@ -4,7 +4,7 @@ import { Avatar, IconButton } from '@material-ui/core'
 import Nav from 'react-bootstrap/Nav'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import AttachFileIcon from '@material-ui/icons/AttachFile'
+import Settings from '../Settings/Settings'
 
 function ChatHeader ({ user, msgAlert }) {
   const [seed, setSeed] = useState('')
@@ -31,9 +31,7 @@ function ChatHeader ({ user, msgAlert }) {
             <IconButton>
               <Nav.Link href="#sign-out"><ExitToAppIcon /></Nav.Link>
             </IconButton>
-            <IconButton>
-              <AttachFileIcon />
-            </IconButton>
+            <Settings />
           </div>
         </div>
       </div>

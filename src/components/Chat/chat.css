@@ -9,6 +9,8 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid lightgray;
+  background-color: #121212;
+  
 }
 
 .chatHeaderInfo {
@@ -38,12 +40,12 @@
 
 .chatReciever {
   margin-right: auto;
-  background-color: green;
+  background-color: #03DAC6;
 }
 
 .myMessage {
   margin-left: auto;
-  background-color: red;
+  background-color: #BB86FC;
 }
 
 
@@ -56,25 +58,28 @@
 .hoverContainer {
   position: absolute;
   display: flex;
+  margin-right: auto;
   flex-direction: row;
   bottom: -22px;
   background-color: lightgray;
   opacity: 0;
-
+  border-radius: 20px;
 }
 
 .hoverContainer:hover {
   opacity: 0.7;
+  background-color: #BB86FC;
 }
 
 .chatName {
   position: absolute;
   top: -22px;
+  color: white;
 }
 
 .chatBody {
   flex: 1;
-  background-color: lightblue;
+  background-color: #3700b3;
   padding: 30px;
   overflow: scroll;
 }
@@ -85,6 +90,7 @@
   align-items: center;
   height: 62px;
   border-top: 1px solid lightgray;
+  background-color: #121212;
 }
 
 .chatFooter > form {
@@ -97,6 +103,12 @@
   border-radius: 30px;
   padding: 10px;
   border: none;
+  background-color: #3700b3;
+  color: white;
+}
+
+::placeholder {
+  color: white;
 }
 
 .chatFooter > form > button {

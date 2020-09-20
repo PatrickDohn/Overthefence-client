@@ -21,7 +21,6 @@ const App = () => {
   const msgAlert = ({ heading, message, variant }) => {
     setMsgAlerts([...msgAlerts, { heading, message, variant }])
   }
-
   return (
     <Fragment>
       <Header user={user} />

@@ -3,7 +3,7 @@ import './chat.css'
 import MyMessageJsx from './MyMessage'
 import RecieveMsgJsx from './RecieveMsg'
 
-function Chat ({ user, msgAlert, conversation }) {
+function Chat ({ user, msgAlert, conversation, chatId }) {
   console.log(conversation, 'WHERE AM I?')
 
   const conversationJsx = conversation.map(message => (
