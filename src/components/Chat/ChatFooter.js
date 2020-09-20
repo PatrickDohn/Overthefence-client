@@ -59,7 +59,6 @@ function ChatFooter ({ user, msgAlert, setConversation }) {
         message: messages.chatSuccess,
         variant: 'secondary'
       }))
-
       .catch(error => {
         msgAlert({
           heading: 'Message failed with and error message of: ' + error.message,
