@@ -3,25 +3,35 @@ import './chat.css'
 import DeleteMsg from '../DeleteMsg/DeleteMsg'
 import UpdateMsg from '../UpdateMsg/UpdateMsg'
 
-const MyMessageJsx = ({ user, message, chatId, setChatId, setConversation, setSentChat, setChat, setNewMessage }) => {
+const MyMessageJsx = ({ user, chat, chatId, setChatId, setConversation, setSentChat, setChat, setNewChat, loadPage, msgAlert }) => {
   return (
-    <div className="chatBody" key={message.id}>
-      <p className= 'myMessage chatMessage'>
-        <span className="chatName">{message.owner.email}</span>
-        {message.content}
-        <span className="chatTimestamp">3:45</span>
+    <div className="chatBody" key={chat.id}>
+      <div className= 'myMessage chatMessage'>
+        <span className="chatName">Me</span>
+        {chat.content}
+        <span className="chatTimestamp">{chat.created_on}</span>
         <div className='hoverContainer'>
           <DeleteMsg
+            loadPage={loadPage}
             user={user}
-            chatId={message.id}
+            chatId={chatId}
             setConversation={setConversation}
             setSentChat={setSentChat}
             setChat={setChat}
-            setNewMessage={setNewMessage}
+            setNewChat={setNewChat}
+            setChatId={setChatId}
           />
-          <UpdateMsg />
+          <UpdateMsg
+            msgAlert={msgAlert}
+            loadPage={loadPage}
+            setChat={setChat}
+            user={user}
+            chatId={chatId}
+            chat={chat}
+            setConversation={setConversation}
+          />
         </div>
-      </p>
+      </div>
     </div>
   )
 }

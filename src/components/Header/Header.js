@@ -6,6 +6,7 @@ import './header.css'
 
 const unauthenticatedOptions = (
   <div className="frontpage">
+    <h1 className="title">OVER THE FENCE</h1>
     <div className='authButton'>
       <Button variant='primary' block href="#sign-up">Sign Up</Button>
       <Button variant='primary' block href="#sign-in">Sign In</Button>

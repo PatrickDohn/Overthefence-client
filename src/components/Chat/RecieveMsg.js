@@ -1,13 +1,13 @@
 import React from 'react'
 import './chat.css'
 
-const RecieveMsgJsx = ({ user, message }) => {
+const RecieveMsgJsx = ({ user, chat }) => {
   return (
-    <div className="chatBody" key={message.id}>
+    <div className="chatBody" key={chat.id}>
       <p className= 'chatReciever chatMessage'>
-        <span className="chatName">{message.owner.email}</span>
-        {message.content}
-        <span className="chatTimestamp">3:45</span>
+        <span className="chatName">{chat.owner.email}</span>
+        {chat.content}
+        <span className="chatTimestamp">{chat.created_on}</span>
       </p>
     </div>
   )

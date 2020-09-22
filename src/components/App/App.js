@@ -22,7 +22,7 @@ const App = () => {
   }
   return (
     <Fragment>
-      <Header user={user} />
+      <Header user={user} msgAlert={msgAlert} />
       {msgAlerts.map((msgAlert, index) => (
         <AutoDismissAlert
           key={index}

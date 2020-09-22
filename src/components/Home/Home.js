@@ -6,11 +6,14 @@ import Chat from '../Chat/Chat.js'
 import ChatHeader from '../Chat/ChatHeader.js'
 import ChatFooter from '../Chat/ChatFooter.js'
 
-function Home ({ user, msgAlert, message }) {
-  const [chatId, setChatId] = useState('')
+function Home ({ user, msgAlert }) {
   const [conversation, setConversation] = useState([])
-  console.log(chatId)
+  const [chat, setChat] = useState({})
   useEffect(() => {
+    loadPage()
+  }, [])
+
+  const loadPage = () => {
     axios({
       url: apiUrl + '/chats/',
       method: 'GET',
@@ -22,10 +25,8 @@ function Home ({ user, msgAlert, message }) {
         console.log(res.data.chats, 'HERE')
         setConversation(res.data.chats)
       })
-      .then(() => setChatId(null))
       .catch(console.error)
-  }, [])
-
+  }
   return (
     <div className="app">
 
@@ -35,16 +36,19 @@ function Home ({ user, msgAlert, message }) {
         />
 
         <Chat
+          loadPage={loadPage}
           msgAlert={msgAlert}
+          chat={chat}
+          setChat={setChat}
           user={user}
           conversation={conversation}
-          chatId={chatId}
-          setChatId={setChatId}
           setConversation={setConversation}
         />
 
         <ChatFooter
+          loadPage={loadPage}
           conversation={conversation}
+          chat={chat}
           user={user}
           msgAlert={msgAlert}
           setConversation={setConversation}
