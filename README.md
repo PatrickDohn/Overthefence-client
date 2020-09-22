@@ -1,7 +1,7 @@
 # Over the fence Front End
 
 
-![Over the fence screenshot]()
+![Over the fence screenshot](https://imgur.com/L9pw9Bf)
 
 ## Set Up and Instalation
 1. Fork and clone this repository
