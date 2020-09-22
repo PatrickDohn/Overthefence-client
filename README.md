@@ -12,8 +12,8 @@ sending  to a friend or group messages post for everyone to see.
 
 ## Important Links
 - [API Repo](https://github.com/PatrickDohn/Overthefence-API)
-- [Deployed Site]()
-- [Deployed API]()
+- [Deployed Site]( https://patrickdohn.github.io/Overthefence-client/)
+- [Deployed API](https://git.heroku.com/overthefence.git)
 
 ## Planning Story
 I started by drawing up Wireframes and ERDs to get the idea of where to start and how to go about certain things.
