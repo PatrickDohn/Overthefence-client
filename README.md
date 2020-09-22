@@ -1,5 +1,5 @@
 # Over the fence Front End
-Inspired by whatsapp bbut in more of a community message board form. Users can send messages like they would in a texting application but instead of
+Inspired by whatsapp but in more of a community message board form. Users can send messages like they would in a texting application but instead of
 sending  to a friend or group messages post for everyone to see.
 
 ![Over the fence screenshot](Capstone.pdf)

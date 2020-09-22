@@ -4,7 +4,6 @@ import { Avatar, IconButton } from '@material-ui/core'
 import Nav from 'react-bootstrap/Nav'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import Settings from '../Settings/Settings'
 
 function ChatHeader ({ user, msgAlert }) {
   const [seed, setSeed] = useState('')
@@ -20,7 +19,7 @@ function ChatHeader ({ user, msgAlert }) {
           <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
 
           <div className="chatHeaderInfo">
-            <h3>Over the fence</h3>
+            <h3 className="headTitle">Over the fence</h3>
             <p>{user.email}</p>
           </div>
 
@@ -31,7 +30,6 @@ function ChatHeader ({ user, msgAlert }) {
             <IconButton>
               <Nav.Link href="#sign-out"><ExitToAppIcon /></Nav.Link>
             </IconButton>
-            <Settings />
           </div>
         </div>
       </div>
