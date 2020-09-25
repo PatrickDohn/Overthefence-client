@@ -16,7 +16,6 @@ function UpdateMsg ({ user, chatId, setConversation, loadPage, msgAlert }) {
       const updatedChat = { [event.target.name]: event.target.value }
       return updatedChat
     })
-    console.log(chat, 'This is new Chat in chat Update')
   }
   const handleSubmit = (event) => {
     event.preventDefault()

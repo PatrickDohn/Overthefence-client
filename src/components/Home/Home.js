@@ -22,7 +22,6 @@ function Home ({ user, msgAlert }) {
       }
     })
       .then(res => {
-        console.log(res.data.chats, 'HERE')
         setConversation(res.data.chats)
       })
       .catch(console.error)

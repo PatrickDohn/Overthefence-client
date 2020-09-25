@@ -7,7 +7,6 @@ import DeleteIcon from '@material-ui/icons/Delete'
 function DeleteMsg ({ user, chatId, setConversation, setChatId, loadPage }) {
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(chatId, 'THIS IS CHAT ID')
     axios({
       url: apiUrl + `/chats/${chatId}/`,
       method: 'DELETE',
@@ -15,8 +14,9 @@ function DeleteMsg ({ user, chatId, setConversation, setChatId, loadPage }) {
         'Authorization': `Token ${user.token}`
       }
     })
-      .then(loadPage())
-      .catch(console.error)
+      .then(() => {
+        loadPage()
+      })
   }
 
   return (

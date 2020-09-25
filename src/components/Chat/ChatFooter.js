@@ -17,13 +17,10 @@ function ChatFooter ({ user, msgAlert, setConversation, loadPage }) {
       const updatedChat = { [event.target.name]: event.target.value }
       return updatedChat
     })
-    console.log(chat, 'This is new Chat in chat footer')
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(user, 'this is user')
-    console.log(chat, 'this is chat')
     axios({
       url: apiUrl + '/chats/',
       method: 'POST',
