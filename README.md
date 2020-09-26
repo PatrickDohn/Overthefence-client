@@ -2,7 +2,7 @@
 Inspired by whatsapp but in more of a community message board form. Users can send messages like they would in a texting application but instead of
 sending  to a friend or group messages post for everyone to see.
 
-![Over the fence screenshot](Capstone.pdf)
+![Over the fence screenshot](OverTheFence.png)
 
 ## Set Up and Instalation
 1. Fork and clone this repository
